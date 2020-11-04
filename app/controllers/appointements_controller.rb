@@ -1,8 +1,9 @@
 class AppointementsController < ApplicationController
-    skip_before_action :authorized
+    # skip_before_action :authorized
+    before_action :logged_in_user, only: [:index]
   
     def index
-      @appointements = Appointement.all
+      @appointements = @user.appointements
       render json: @appointements
     end
   
