@@ -1,8 +1,6 @@
 class AppointementsController < ApplicationController
-    # skip_before_action :authorized
-    before_action :logged_in_user, only: [:index]
-  
     def index
+      @user = User.find_by(username: params[:username])
       @appointements = @user.appointements
       render json: @appointements
     end
