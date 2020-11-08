@@ -13,7 +13,6 @@ class CarsController < ApplicationController
   
     def create
       @car = Car.create(car_params)
-  
       if @car.valid?
         render json: @car, status: :created, location: @car
       else

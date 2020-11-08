@@ -9,7 +9,7 @@ class AppointementsController < ApplicationController
       @user = User.find_by(username: params[:username])
       @appointement = @user.appointements.create(appointement_params)
       if @appointement.valid?
-        render json: @appointement, status: :created
+        render json: {appointement: @appointement, message: "Appointemet created"}
       else
         render json: @appointement.errors, status: :unprocessable_entity
       end
