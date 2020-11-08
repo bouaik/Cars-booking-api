@@ -11,7 +11,7 @@ class AppointementsController < ApplicationController
       if @appointement.valid?
         render json: {appointement: @appointement, message: "Appointemet created"}
       else
-        render json: @appointement.errors, status: :unprocessable_entity
+        render json: { error: "All fields must be filled"}
       end
     end
   
