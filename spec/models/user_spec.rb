@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -10,9 +9,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Association' do
-
     it { should have_many(:appointements) }
-    
+
     it {
       should have_many(:cars).through(:appointements)
     }

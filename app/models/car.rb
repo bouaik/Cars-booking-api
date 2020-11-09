@@ -1,3 +1,3 @@
 class Car < ApplicationRecord
-    has_many :appointements
+  has_many :appointements
 end
